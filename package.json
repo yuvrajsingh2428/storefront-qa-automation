@@ -1,0 +1,20 @@
+{
+  "name": "storefront-qa-automation",
+  "version": "1.0.0",
+  "description": "This is a production-quality UI automation framework built with Playwright, designed using a Component-Based Page Object Model and Custom Fixtures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.7.0",
+    "prettier": "^3.9.5",
+    "typescript": "^7.0.2"
+  }
+}
