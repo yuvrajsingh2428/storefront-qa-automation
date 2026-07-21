@@ -13,6 +13,5 @@ export class ProductListingPage extends BasePage {
     const card = this.getProductCard(productName);
     const addToCartBtn = card.getByRole('button', { name: 'Add to Cart' });
     await this.click(addToCartBtn);
-    await this.waitForLoaderToDisappear();
   }
 }

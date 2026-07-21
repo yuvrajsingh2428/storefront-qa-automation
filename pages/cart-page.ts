@@ -13,12 +13,10 @@ export class CartPage extends BasePage {
 
   async proceedToCheckout() {
     await this.click(this.proceedToCheckoutBtn);
-    await this.waitForPageLoad();
   }
 
   async applyDiscount(code: string) {
     await this.fill(this.discountInput, code);
     await this.click(this.applyDiscountBtn);
-    await this.waitForLoaderToDisappear();
   }
 }

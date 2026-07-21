@@ -7,13 +7,11 @@ test.describe('Cart Updates (Sanity)', () => {
     await productListingPage.navigate('/products');
     
     // Initially 0
-    let count = await productListingPage.navbar.getCartCount();
-    expect(count).toBe(0);
+    await expect(productListingPage.navbar.cartBadge).toHaveText('0');
     
     await productListingPage.addProductToCart('Awesome T-Shirt');
     
     // Should be 1
-    count = await productListingPage.navbar.getCartCount();
-    expect(count).toBe(1);
+    await expect(productListingPage.navbar.cartBadge).toHaveText('1');
   });
 });

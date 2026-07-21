@@ -14,7 +14,6 @@ export class NavbarComponent extends BasePage {
 
   async goToCart() {
     await this.click(this.cartLink);
-    await this.waitForPageLoad();
   }
 
   async getCartCount(): Promise<number> {

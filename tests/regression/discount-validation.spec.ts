@@ -10,10 +10,14 @@ test.describe('Discount Validation (Regression)', () => {
     await productListingPage.addProductToCart('Expensive Jacket');
     await productListingPage.navbar.goToCart();
     
+    await expect(cartPage.totalText).not.toBeEmpty();
     const initialTotalText = await cartPage.totalText.textContent() || '0';
     const initialTotal = CurrencyHelper.parseCurrencyToFloat(initialTotalText);
     
     await cartPage.applyDiscount('SUMMER20');
+    
+    // Auto-retry until the total text changes
+    await expect(cartPage.totalText).not.toHaveText(initialTotalText);
     
     const newTotalText = await cartPage.totalText.textContent() || '0';
     const newTotal = CurrencyHelper.parseCurrencyToFloat(newTotalText);

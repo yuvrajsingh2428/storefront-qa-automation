@@ -1,2 +1,37 @@
-node_modules
-.env
+# Dependencies
+node_modules/
+
+# Playwright generated files
+playwright-report/
+test-results/
+blob-report/
+
+# Coverage and build outputs
+coverage/
+dist/
+build/
+.cache/
+.temp/
+tmp/
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.bak
+*.old
+*.orig
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Environment files
+.env.local
+.env.development
+.env.test
+.env.production

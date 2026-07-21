@@ -3,7 +3,8 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 
 // Read from appropriate ".env" file.
-dotenv.config({ path: path.resolve(__dirname, 'config', process.env.ENV ? `.env.${process.env.ENV}` : '.env.staging') });
+const env = process.env.ENV || 'local';
+dotenv.config({ path: path.resolve(__dirname, 'config', `.env.${env}`) });
 
 export default defineConfig({
   testDir: './tests',
@@ -17,7 +18,7 @@ export default defineConfig({
     timeout: 5000,
   },
   use: {
-    baseURL: process.env.BASE_URL || 'https://staging.example-storefront.com',
+    baseURL: process.env.BASE_URL || 'http://localhost:8080',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
